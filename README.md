@@ -9,7 +9,7 @@
 
 This project is for educational porpuses only.
 
-Site published at https://VaidaEG.github.io/26-todo/
+Site published at https://vaidaeg.github.io/26-todo-list/
 
 Design: random
 
