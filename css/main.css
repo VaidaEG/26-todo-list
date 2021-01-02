@@ -1,2 +1,165 @@
 @import './reset.css';
 
+body {
+    height: 100vh;
+    background-color: #F9F9F9;
+}
+.right {
+    float: right;
+}
+h1 {
+    display: inline-block;
+    text-align: center;
+    line-height: 60px;
+    background-color: #EEE;
+    box-shadow: 0 2px 4px #0005;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1;
+}
+h1 + * {
+    margin-top: 60px;
+}
+.list {
+    display: grid;
+    height: calc(100% - 60px);
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    padding: 30px;
+    gap: 30px;
+    place-content: start;
+}
+    .list > .item {
+        display: inline-block;
+        width: 100%;
+        padding: 20px;
+        border: 1px solid #CCC;
+        border-radius: 8px;
+        background-color: #FFF;
+        position: relative;
+    }
+        .list > .item > .actions {
+            display: none;
+            position: absolute;
+            top: 5px;
+            right: 5px;
+        }
+            .list > .item:hover > .actions {
+                display: inline-block;
+            }
+.add-new {
+    display: inline-block;
+    width: 60px;
+    height: 60px;
+    background-color: #36F;
+    color: #FFF;
+    border-radius: 50%;
+    box-shadow: 0 4px 8px #0008;
+    line-height: 60px;
+    font-size: 40px;
+    text-align: center;
+    cursor: pointer;
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    opacity: 0.9;
+}
+    .add-new:hover {
+        opacity: 1;
+    }
+.lightbox {
+    display: none;
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+}
+    .lightbox.show {
+        display: block;
+    }
+    .lightbox > .background {
+        display: inline-block;
+        width: 100%;
+        height: 100%;
+        background-color: #0001;
+    }
+    .lightbox > .content {
+        display: inline-block;
+        min-width: 280px;
+        width: 50%;
+        max-width: 500px;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+.btn {
+    display: inline-block;
+    padding: 10px 20px;
+    border-radius: 4px;
+    background-color: #36F;
+    color: #FFF;
+    line-height: 20px;
+    font-size: 18px;
+    border: none;
+    cursor: pointer;
+    opacity: 0.9;
+}
+    .btn:hover {
+        opacity: 1;
+    }
+    .btn.cancel {
+        background-color: #CCC;
+        color: #333;
+    }
+    .btn.add {
+        background-color: #3B3;
+        color: #FFF;
+    }
+    .btn.edit {
+        background-color: #36F;
+        color: #FFF;
+    }
+    .btn.remove {
+        background-color: #F33;
+        color: #333;
+    }
+    .btn.small {
+        padding: 5px 10px;
+        line-height: 14px;
+        font-size: 14px;
+        border-radius: 2px; 
+
+    }
+form {
+    display: inline-block;
+    width: 100%;
+    padding: 20px;
+    background-color: #FFF;
+    border-radius: 4px;
+    box-shadow: 0 4px 8px #0003;
+}
+    form > .title {
+        display: inline-block;
+        width: 100%;
+    }
+    form > textarea {
+        display: inline-block;
+        width: 100%;
+        padding: 10px;
+        font-size: 17px;
+        line-height: 23px;
+        min-height: 89px;
+        max-height: 204px;
+        resize: vertical;
+        border: 1px solid #777;
+    }
+    form > * {
+        float: left;
+    }
+    form > * + * {
+        margin-top: 20px;
+    }
+    
