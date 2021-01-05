@@ -23,14 +23,21 @@
     <!-- pliusas -->
     <div class="add-new">+</div>
     <!-- form -->
-    <div class="lightbox">
+    <div class="lightbox" data-form="add">
         <div class="background"></div>
         <div class="content">
-            <form>
+            <form class="add">
                 <h2>Add new task</h2>
                 <textarea></textarea>
                 <button class="btn cancel" type="submit">Cancel</button>
                 <button class="btn add right" type="submit">Add</button>
+            </form>
+            <form class="update">
+                <h2>Edit task</h2>
+                <textarea></textarea>
+                <div>STATUS: atlikta/neatlikta</div>
+                <button class="btn cancel" type="submit">Cancel</button>
+                <button class="btn update right" type="submit">Update</button>
             </form>
         </div>
     </div>

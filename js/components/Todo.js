@@ -3,8 +3,7 @@ class Todo {
         this.selector = params.selector;
         this.DOM = null;
         this.taskList = [];
-
-
+        this.editForm = null;
     }
     init() {
         // validacija
@@ -12,8 +11,6 @@ class Todo {
             return false;
         }
         this.updateStyle();
-        // render
-        // add events
     }
     isValidSelector() {
         const DOM = document.querySelector(this.selector);
@@ -33,7 +30,6 @@ class Todo {
         this.taskList.push(task);
         this.renderList();
         return true;
-
     }
     generateItem(task) {
         return `<div class="item">
@@ -55,8 +51,9 @@ class Todo {
         this.addEvents();
     }
     // CRUD: update
-    updateTask() {
-
+    updateTask(itemIndex, newText) {
+        this.taskList[itemIndex].text = newText;
+        this.renderList();
     }
     // CRUD: delete
     deleteTask(taskIndex) {
@@ -71,16 +68,13 @@ class Todo {
             const removeBtn = item.querySelector('.btn.remove');
 
             editBtn.addEventListener('click', () => {
-                this.initTodoItemEditing(item);
+                this.editForm.show(i);
             })
             removeBtn.addEventListener('click', () => {
                 this.deleteTask(i);
             })   
         }
-    }
-    initTodoItemEditing(itemDOM) {
-        
-    }
+    }  
 }
 
 export { Todo }
