@@ -2,10 +2,10 @@ import { Todo } from './components/Todo.js';
 
 const addNewTask = document.querySelector('.add-new');
 const lightbox = document.querySelector('.lightbox');
-const form = lightbox.querySelector('form');
-const textarea = form.querySelector('textarea');
-const buttonCanel = form.querySelector('button.cancel');
-const buttonAdd = form.querySelector('button.add');
+const formAdd = lightbox.querySelector('form.add');
+const textarea = formAdd.querySelector('textarea');
+const buttonCanel = formAdd.querySelector('button.cancel');
+const buttonAdd = formAdd.querySelector('button.add');
 
 // init objets
 const todo = new Todo({
@@ -15,6 +15,7 @@ todo.init();
 
 // add events
 addNewTask.addEventListener('click', () => {
+    lightbox.dataset.form = 'add';
     lightbox.classList.add('show');
 });
 
